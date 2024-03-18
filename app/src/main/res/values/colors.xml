@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="operator_button_text">#B1D6F4</color>
+    <color name="operator_button">#F4F7F8</color>
+    <color name="operator_button_outline">#8080A1B0</color>
+    <color name="digit_button">#89CAEA</color>
+    <color name="digit_button_text">#FFFFFF</color>
+    <color name="digit_button_outline">#804191C1</color>
+    <color name="clear_button">#F7A1C3</color>
+    <color name="clear_button_outline">#806D5E80</color>
+    <color name="display_background">#A4A295</color>
+</resources>
