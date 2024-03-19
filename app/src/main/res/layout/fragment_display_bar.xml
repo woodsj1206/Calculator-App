@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:background="@color/display_background"
         android:gravity="bottom"
-        android:text="1234567890"
+        android:text="0"
         android:textAlignment="textEnd"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"

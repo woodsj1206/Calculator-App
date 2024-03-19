@@ -12,14 +12,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.calculatorapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+class MainActivity : AppCompatActivity(), ButtonKeyboardFragment.OnButtonClickListener {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
 
-
+    override fun onButtonClick(text: String) {
+        val displayBarFragment = supportFragmentManager.findFragmentById(R.id.fcvDisplayBar) as DisplayBarFragment
+        displayBarFragment.updateDisplay(text)
     }
 }
