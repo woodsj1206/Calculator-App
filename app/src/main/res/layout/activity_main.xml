@@ -8,23 +8,27 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvDisplayBar"
-        android:name="com.example.calculatorapp.DisplayBar"
+        android:name="com.example.calculatorapp.DisplayBarFragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:foregroundGravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fcvButtonKeyboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_display_bar" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvButtonKeyboard"
-        android:name="com.example.calculatorapp.ButtonKeyboard"
+        android:name="com.example.calculatorapp.ButtonKeyboardFragment"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fcvDisplayBar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout="@layout/fragment_button_keyboard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
