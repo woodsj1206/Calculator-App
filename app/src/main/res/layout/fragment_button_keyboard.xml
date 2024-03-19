@@ -21,7 +21,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/btnC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/clear_button"
@@ -34,7 +34,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/btnCE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -47,7 +47,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/btnSqrt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -60,7 +60,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnMod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -79,7 +79,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -92,7 +92,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btn8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -105,7 +105,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btn9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -118,7 +118,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/btnDivide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -137,7 +137,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btn4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -150,7 +150,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/btn5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -163,7 +163,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/btn6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -176,7 +176,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/btnMultiply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -195,7 +195,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -208,7 +208,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -221,7 +221,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -234,7 +234,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/btnSubtract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -253,7 +253,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button20"
+                android:id="@+id/btn0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -266,7 +266,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button21"
+                android:id="@+id/btnDecimal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -279,7 +279,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button22"
+                android:id="@+id/btnSign"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/digit_button"
@@ -292,7 +292,7 @@
                 app:strokeWidth="2dp" />
 
             <Button
-                android:id="@+id/button23"
+                android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
@@ -311,7 +311,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/btnEquals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/operator_button"
