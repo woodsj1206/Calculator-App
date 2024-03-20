@@ -121,7 +121,7 @@ class ButtonKeyboardFragment : Fragment() {
         }
 
         //Equals
-        binding.btnSign.setOnClickListener {
+        binding.btnEquals.setOnClickListener {
             buttonClickListener?.onButtonClick(getButtonText(it as Button))
         }
 
