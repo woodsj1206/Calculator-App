@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/tvDisplay"
-                android:layout_width="315dp"
+                android:layout_width="400dp"
                 android:layout_height="0dp"
                 android:background="@color/display_background"
                 android:gravity="bottom"
