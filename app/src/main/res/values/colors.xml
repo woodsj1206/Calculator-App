@@ -11,4 +11,5 @@
     <color name="clear_button">#F7A1C3</color>
     <color name="clear_button_outline">#806D5E80</color>
     <color name="display_background">#A4A295</color>
+    <color name="keyboard_background">#86CCEE</color>
 </resources>

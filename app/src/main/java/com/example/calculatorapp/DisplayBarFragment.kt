@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.calculatorapp.databinding.FragmentButtonKeyboardBinding
 import com.example.calculatorapp.databinding.FragmentDisplayBarBinding
+import kotlin.math.sqrt
 
 class DisplayBarFragment : Fragment() {
-
     private lateinit var binding : FragmentDisplayBarBinding
 
     private var leftOperand = 0.0
@@ -18,9 +18,10 @@ class DisplayBarFragment : Fragment() {
     private var operator = ' '
 
     private var cleared = true
-    private var addedDecimal = false
-    private var setLeftOperand = false
     private var calculated = false
+    private var setOperator = false
+    private var addedDecimal = false
+    private var isNegative = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,38 +42,67 @@ class DisplayBarFragment : Fragment() {
         when(text){
             "0"->{
                 if(displayText != "0"){
-                    binding.tvDisplay.text = displayText + text
+                    if(cleared){
+                        if(isNegative){
+                            binding.tvDisplay.text = "-" + text
+                        }
+                        else{
+                            binding.tvDisplay.text = text
+                        }
+                    }
+                    else{
+                        binding.tvDisplay.text = displayText + text
+                    }
                 }
             }
             "1", "2", "3", "4", "5", "6", "7", "8", "9"-> {
                 if(cleared){
-                    if(displayText.first().toString() == "-" && !setLeftOperand){
+                    if(isNegative){
                         binding.tvDisplay.text = "-" + text
                     }
                     else{
                         binding.tvDisplay.text = text
                     }
                     cleared = false
+                    addedDecimal = false
+                    calculated = false
                 }
                 else{
                     binding.tvDisplay.text = displayText + text
                 }
             }
             "+","-","x","/","%"->{
-                if(!setLeftOperand){
+                if(!setOperator){
                     leftOperand = displayText.toDouble()
+
                     operator = text.single()
+                    setOperator = true
+
                     cleared = true
-                    setLeftOperand = true
                     calculated = false
+                    addedDecimal = false
+
+                    isNegative = false
                 }
+            }
+            "√"->{
+                leftOperand = displayText.toDouble()
+                binding.tvDisplay.text = sqrt(leftOperand).toString()
+
+                cleared = true
+                addedDecimal = false
+                setOperator = false
+
+                calculated = true
             }
             "CE"-> {
                 if(calculated){
                     binding.tvDisplay.text = "0"
+
                     cleared = true
                     addedDecimal = false
-                    setLeftOperand = false
+                    setOperator = false
+
                     calculated = false
                 }
                 else{
@@ -96,34 +126,53 @@ class DisplayBarFragment : Fragment() {
             }
             "C"->{
                 binding.tvDisplay.text = "0"
+
                 cleared = true
                 addedDecimal = false
-                setLeftOperand = false
+                setOperator = false
+
                 calculated = false
+                isNegative = false
             }
             "."->{
-                if(!calculated){
-                    if(!addedDecimal){
-                        binding.tvDisplay.text = displayText + "."
-                        addedDecimal = true
-                        cleared = false
+                if(!addedDecimal){
+                    if(cleared){
+                        if(isNegative){
+                            binding.tvDisplay.text = "-0."
+                        }
+                        else{
+                            binding.tvDisplay.text = "0."
+                        }
                     }
+                    else{
+                        binding.tvDisplay.text = displayText + "."
+                    }
+
+                    addedDecimal = true
+                    cleared = false
                 }
             }
             "+/-"->{
-                if(!calculated){
-                    binding.tvDisplay.text = if(displayText.first().toString() != "-") "-${displayText}" else displayText.drop(1)
+                if(calculated || cleared){
+                    binding.tvDisplay.text = "-0"
+                    isNegative = true
+                }
+                else{
+                    isNegative = displayText.first().toString() == "-"
+                    binding.tvDisplay.text = if (!isNegative) "-${displayText}" else displayText.drop(1)
                 }
             }
             "="->{
-                if(setLeftOperand){
+                if(setOperator){
                     rightOperand = displayText.toDouble()
                     binding.tvDisplay.text = computeAnswer(leftOperand, operator, rightOperand).toString()
 
                     cleared = true
+                    setOperator = false
                     addedDecimal = false
-                    setLeftOperand = false
+
                     calculated = true
+                    isNegative = false
                 }
             }
         }
