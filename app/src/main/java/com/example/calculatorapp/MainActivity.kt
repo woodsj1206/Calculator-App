@@ -14,7 +14,6 @@ import com.example.calculatorapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ButtonKeyboardFragment.OnButtonClickListener {
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
