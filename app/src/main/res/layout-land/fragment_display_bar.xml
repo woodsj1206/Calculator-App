@@ -20,19 +20,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvDisplay"
-                android:layout_width="400dp"
-                android:layout_height="0dp"
-                android:background="@color/display_background"
-                android:gravity="bottom"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="60sp"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <TextView
+                    android:id="@+id/tvOperator"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center"
+                    android:textSize="60sp" />
+
+                <TextView
+                    android:id="@+id/tvDisplay"
+                    android:layout_width="440dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="60sp" />
+
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

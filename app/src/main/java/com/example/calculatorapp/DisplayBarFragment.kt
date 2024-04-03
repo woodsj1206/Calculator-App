@@ -42,6 +42,8 @@ class DisplayBarFragment : Fragment() {
             "0"->{
                 if(displayText != "0" && displayText != "-0"){
                     if(cleared){
+                        binding.tvOperator.text = ""
+
                         if(isNegative){
                             binding.tvDisplay.text = "-" + buttonText
                         }
@@ -56,6 +58,8 @@ class DisplayBarFragment : Fragment() {
             }
             "1", "2", "3", "4", "5", "6", "7", "8", "9"-> {
                 if(cleared){
+                    binding.tvOperator.text = ""
+
                     if(isNegative){
                         binding.tvDisplay.text = "-" + buttonText
                     }
@@ -72,10 +76,11 @@ class DisplayBarFragment : Fragment() {
             }
             "+","-","x","/","%"->{
                 if(!setOperator){
-                    leftOperand = displayText.toDouble()
-
                     operator = buttonText.single()
+                    binding.tvOperator.text = operator.toString()
                     setOperator = true
+
+                    leftOperand = displayText.toDouble()
 
                     cleared = true
                     addedDecimal = false
@@ -85,6 +90,9 @@ class DisplayBarFragment : Fragment() {
                 }
             }
             "√"->{
+                operator = buttonText.single()
+                binding.tvOperator.text = operator.toString()
+
                 leftOperand = displayText.toDouble()
                 binding.tvDisplay.text = sqrt(leftOperand).toString()
 
@@ -96,6 +104,7 @@ class DisplayBarFragment : Fragment() {
             "CE"-> {
                 if(calculated){
                     binding.tvDisplay.text = "0"
+                    binding.tvOperator.text = ""
 
                     resetEntry()
 
@@ -126,6 +135,7 @@ class DisplayBarFragment : Fragment() {
             }
             "C"->{
                 binding.tvDisplay.text = "0"
+                binding.tvOperator.text = ""
 
                 resetEntry()
                 isNegative = false
@@ -135,6 +145,8 @@ class DisplayBarFragment : Fragment() {
             "."->{
                 if(!addedDecimal){
                     if(cleared){
+                        binding.tvOperator.text = ""
+
                         if(isNegative){
                             binding.tvDisplay.text = "-0."
                         }
@@ -152,7 +164,9 @@ class DisplayBarFragment : Fragment() {
             }
             "+/-"->{
                 if(calculated || cleared){
+                    binding.tvOperator.text = ""
                     binding.tvDisplay.text = "-0"
+
                     isNegative = true
                     calculated = false
                 }
@@ -163,6 +177,8 @@ class DisplayBarFragment : Fragment() {
             }
             "="->{
                 if(setOperator){
+                    binding.tvOperator.text = "="
+
                     rightOperand = displayText.toDouble()
 
                     val result = computeAnswer(leftOperand, operator, rightOperand)
@@ -175,8 +191,6 @@ class DisplayBarFragment : Fragment() {
                 }
             }
         }
-        Log.d("VALUE", "${binding.tvDisplay.text.toString().toDouble()}")
-        //Log.d("VALUE", "${binding.tvDisplay.text.toString().length}")
     }
 
     private fun computeAnswer(leftOperand : Double, operator : Char, rightOperand : Double): Double {
