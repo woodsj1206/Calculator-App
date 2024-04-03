@@ -37,14 +37,19 @@
                     android:gravity="bottom|center"
                     android:textSize="60sp" />
 
-                <TextView
-                    android:id="@+id/tvDisplay"
+                <ScrollView
                     android:layout_width="275dp"
-                    android:layout_height="match_parent"
-                    android:gravity="bottom"
-                    android:text="0"
-                    android:textAlignment="textEnd"
-                    android:textSize="60sp" />
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/tvDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text="0"
+                        android:textAlignment="textEnd"
+                        android:textSize="60sp" />
+                </ScrollView>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
