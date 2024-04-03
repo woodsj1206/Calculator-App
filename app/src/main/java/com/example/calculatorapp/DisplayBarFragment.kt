@@ -165,7 +165,9 @@ class DisplayBarFragment : Fragment() {
                 if(setOperator){
                     rightOperand = displayText.toDouble()
 
-                    binding.tvDisplay.text = computeAnswer(leftOperand, operator, rightOperand).toString()
+                    val result = computeAnswer(leftOperand, operator, rightOperand)
+                    binding.tvDisplay.text = result.toString()
+
                     calculated = true
 
                     resetEntry()
