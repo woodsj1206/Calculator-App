@@ -1,3 +1,5 @@
+![Logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp)
+
 # Calculator-App
 This is a simple calculator application that allows users to perform basic arithmetic operations including addition, subtraction, multiplication, division, modulus, and square root. It supports positive and negative real numbers.
 
